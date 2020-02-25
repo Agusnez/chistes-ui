@@ -25,6 +25,7 @@
 
 <script>
 import axios from 'axios';
+import { apiURL } from '@/app.config.js';
 
 export default {
   name: "Chiste",
@@ -34,7 +35,7 @@ export default {
   },
   methods: {
     removeChiste() {
-      axios.delete(`${process.env.VUE_APP_API_HOST}api/v1/chistes/${this.id}`).then(()=>{
+      axios.delete(`${apiURL}api/v1/chistes/${this.id}`).then(()=>{
         location.reload();
       });
     }
